@@ -1,0 +1,13 @@
+<h2>Are you sure you want to delete {{book.title}}?</h2>
+<a href="/book/{{book.id}}/delete"><div class="deleteYes">Yes</div></a>
+<a href="/book/page/0"><div class="deleteNo">No!! Go back to books!!</div></a>
+<img class="deleteImage" src="{{book.cover_url}}" />
+<p class="deleteDescription">
+    {{book.description}}
+</p>
+<h3 class="deleteAuthorsLabel">Authors:</h3>
+{{#each author}}
+    <a class="deleteAuthors" href="/author/{{this.id}}">
+        {{this.first_name}} {{this.last_name}}
+    </a><br/>
+{{/each}}

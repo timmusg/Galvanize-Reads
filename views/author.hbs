@@ -1,0 +1,37 @@
+<h2>Authors</h2>
+<form class="authorForm" action="/author/page/0" method="GET">
+    <label for="authorSearch" class="authorSearchLabel">Search for an author:
+        <input type="text" name="authorSearch" id="authorSearch" placeholder="Search for an author" class="authorSearch">
+    </label>
+    <input type="submit" name="name" value="submit" class="authorSearchSubmit">
+</form>
+<ul class="authors">
+    {{#each data}}
+        <div class='author'>
+            <div>
+                <a href="/author/{{this.author_id}}"><img class="authorPicture" src="{{this.portrait_url}}"></img></a>
+            </div>
+            <div>
+                <li class="authorName">{{this.first_name}} {{this.last_name}}</li>
+                <li class="biography"><span class="biographyHeader">Biography:</span><br/> {{this.biography}}</li>
+                <p class="booksWritten">Books Written:</p>
+                {{#each books}}
+                    <a class-"booksAuthorWritten" href="/book/{{this.id}}">{{this.title}}</a><br/>
+                {{/each}}
+                <a href="/author/{{this.author_id}}/edit"><i class="fa fa-edit edit"></i></a>
+                <a href="/author/{{this.author_id}}/confirmDelete"><i class="fa fa-remove remove"></i></a>
+            </div>
+        </div>
+    {{/each}}
+</ul>
+<p class="authorAmount">
+    There are {{dataLength}} authors shown!!!
+</p>
+{{#each authorArrays}}
+    <a class="pageLink" href="/author/page/{{@index}}">Page {{@index}}</a>
+{{/each}}
+<a href="/author/addAuthor">
+    <div class="addBookContainer">
+        Add an Author
+    </div>
+</a>

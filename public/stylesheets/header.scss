@@ -1,0 +1,56 @@
+.header {
+    background-color: $header-background-primary;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    font-size: 2.5rem;
+    margin-left: 1rem;
+    font-family: Merriweather;
+    color: $galvanize-primary;
+    top: 5%;
+}
+
+.logo {
+    padding: 0.5rem;
+}
+
+.logoImage {
+    display: inline-block;
+    width: 5%;
+    height: auto;
+    margin: 0px;
+}
+
+.links {
+    position: relative;
+    top: 2vh;
+    padding: 2rem;
+    list-style-type: none;
+    margin-right: 2rem;
+    display: inline;
+    font-size: 2rem;
+    color: $galvanize-primary;
+    &:visited {
+        color: $galvanize-primary;
+    }
+    &:hover {
+        background-color: $button-color-change;
+        text-decoration: none;
+    }
+}
+
+.linksDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    height: 100%;
+}
+
+.brand-logo {
+    width: 70%;
+}
